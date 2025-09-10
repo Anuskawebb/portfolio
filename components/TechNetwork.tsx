@@ -42,23 +42,42 @@ export default function TechNetwork() {
     return () => io.disconnect()
   }, [])
 
-  // Layout: icons in a horizontal row near the top, all paths converge to center (0,0)
+  // Layout: icons arranged in a tree-like structure with more spacing
   const layout = useMemo(() => {
-    const width = 900
-    const topY = -200
-    const gap = width / (techs.length + 1)
-    const items = techs.map((t, i) => ({
-      tech: t,
-      x: -width / 2 + gap * (i + 1),
-      y: topY
-    }))
-    return { items, width }
+    const width = 1000
+    const height = 400
+    
+    // Create a more tree-like layout with multiple rows
+    const rows = [
+      { y: -180, count: 4 }, // Top row
+      { y: -120, count: 6 }, // Second row
+      { y: -60, count: 6 }   // Third row
+    ]
+    
+    const items: Array<{ tech: Tech; x: number; y: number }> = []
+    let techIndex = 0
+    
+    rows.forEach(row => {
+      const rowWidth = Math.min(width, row.count * 120) // Increased spacing
+      const gap = rowWidth / (row.count + 1)
+      
+      for (let i = 0; i < row.count && techIndex < techs.length; i++) {
+        items.push({
+          tech: techs[techIndex],
+          x: -rowWidth / 2 + gap * (i + 1),
+          y: row.y
+        })
+        techIndex++
+      }
+    })
+    
+    return { items, width, height }
   }, [])
 
   return (
-    <div ref={containerRef} className="relative w-full flex items-center justify-center py-10">
-      <div className="relative" style={{ width: 900, height: 560 }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="-450 -280 900 560" aria-hidden>
+    <div ref={containerRef} className="relative w-full flex items-center justify-center py-6 md:py-10">
+      <div className="relative w-full max-w-5xl" style={{ height: Math.max(500, layout.height + 200) }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="-500 -220 1000 600" aria-hidden>
           {/* Curved paths from each icon to center */}
           {layout.items.map((p, idx) => {
             // Bezier control points: start at icon, curve down into center
@@ -106,27 +125,36 @@ export default function TechNetwork() {
           </defs>
         </svg>
 
-        {/* Top icon row */}
+        {/* Tech icons in tree layout */}
         {layout.items.map((p, idx) => (
           <div
             key={`logo-${idx}`}
             className={`absolute -translate-x-1/2 -translate-y-1/2 transition-all ${inView ? "opacity-100" : "opacity-0"}`}
             style={{
-              left: 450 + (inView ? p.x : 0),
-              top: 280 + (inView ? p.y : 0),
+              left: `calc(50% + ${inView ? p.x : 0}px)`,
+              top: `calc(50% + ${inView ? p.y : 0}px)`,
               transitionDuration: "700ms",
               transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
               transitionDelay: `${idx * 40}ms`
             }}
           >
-            <div className="w-10 h-10 rounded-full overflow-hidden shadow-[0_0_12px_rgba(163,98,255,.25)]">
-              <Image src={layout.items[idx].tech.url} alt={layout.items[idx].tech.name} width={40} height={40} className="w-10 h-10 object-contain" />
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden shadow-[0_0_12px_rgba(163,98,255,.25)] bg-white/10 backdrop-blur-sm flex items-center justify-center">
+              <Image 
+                src={layout.items[idx].tech.url} 
+                alt={layout.items[idx].tech.name} 
+                width={32} 
+                height={32} 
+                className="w-6 h-6 md:w-8 md:h-8 object-contain" 
+              />
             </div>
           </div>
         ))}
 
         {/* Center node (single glow) */}
-        <div className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#a78bfa] shadow-2xl ${inView ? "scale-100" : "scale-95"}`} style={{ width: 120, height: 120 }} />
+        <div 
+          className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#a78bfa] shadow-2xl transition-transform duration-700 ${inView ? "scale-100" : "scale-95"}`} 
+          style={{ width: 80, height: 80 }} 
+        />
       </div>
     </div>
   )
