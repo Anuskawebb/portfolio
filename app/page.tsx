@@ -3,6 +3,8 @@ import Image from "next/image"
 import projectImg1 from "@/app/screenPreviews/image.png"
 import projectImg2 from "@/app/screenPreviews/image2.jpg"
 import projectImg3 from "@/app/screenPreviews/image3.jpg"
+import heroAvatar from "@/app/screenPreviews/c4be3ecb-cb44-4687-866a-0940ef600153.jpg"
+import TechNetwork from "@/components/TechNetwork"
 
 export default function Portfolio() {
   return (
@@ -24,16 +26,11 @@ export default function Portfolio() {
       {/* Header */}
       <header className="flex items-center justify-between p-6 max-w-7xl mx-auto relative z-10">
         <div className="text-3xl font-bold text-white">Ʃ</div>
-        <nav className="flex gap-12">
-          <a href="#" className="text-white hover:text-[#9857d3] transition-colors text-lg">
-            Home
-          </a>
-          <a href="#" className="text-white hover:text-[#9857d3] transition-colors text-lg">
-            About
-          </a>
-          <a href="#" className="text-white hover:text-[#9857d3] transition-colors text-lg">
-            Lab
-          </a>
+        <nav className="flex gap-10">
+          <a href="#about" className="text-white/90 hover:text-white transition-colors text-lg">About</a>
+          <a href="#projects" className="text-white/90 hover:text-white transition-colors text-lg">Projects</a>
+          <a href="#skills" className="text-white/90 hover:text-white transition-colors text-lg">Skills</a>
+          <a href="#contact" className="text-white/90 hover:text-white transition-colors text-lg">Contact</a>
         </nav>
       </header>
 
@@ -52,11 +49,14 @@ export default function Portfolio() {
 
             {/* Avatar with purple glow */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#9857d3] to-[#a362ff] rounded-3xl blur-2xl opacity-60 scale-110"></div>
-              <img
-                src="/female-developer-avatar-3d-style-with-laptop.jpg"
+              <div className="absolute inset-0 bg-gradient-to-br from-[#9857d3] to-[#a362ff] rounded-full blur-2xl opacity-70 scale-110"></div>
+              <Image
+                src={heroAvatar}
                 alt="Profile"
-                className="w-48 h-48 rounded-3xl object-cover relative z-10 shadow-2xl"
+                width={192}
+                height={192}
+                className="w-48 h-48 rounded-full object-cover relative z-10 shadow-2xl bg-transparent"
+                priority
               />
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function Portfolio() {
         </div>
 
         {/* About Section */}
-        <div className="max-w-3xl text-left mb-20">
+        <div id="about" className="max-w-3xl text-left mb-20 scroll-mt-24">
           <h2 className="text-4xl font-bold mb-8 text-white">I'm a Web2/Web3 Dev .</h2>
           <p className="text-[#ccd6f6] mb-6 leading-relaxed text-lg">
             Recently graduated with a BCA (9.01 CGPA), exploring Web2 & Web3 development through projects and
@@ -123,100 +123,48 @@ export default function Portfolio() {
           </Card>
         </div>
 
-        {/* Team Section */}
-        <div className="text-center mb-20">
+        {/* Skills Section */}
+        <div id="skills" className="text-center mb-20 scroll-mt-24">
           <p className="text-[#b5bddb] mb-2 text-lg">
             I'm currently looking to join a <span className="text-[#9857d3]">cross-functional</span> team
           </p>
           <p className="text-[#b5bddb] text-sm mb-12">That values improving people's lives through accessible design</p>
 
-          <div className="flex justify-center gap-3 flex-wrap mb-4">
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">⚛</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-sm font-bold">JS</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-sm font-bold">TS</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">N</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">🐍</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">⚡</span>
-            </div>
-          </div>
-          <div className="flex justify-center gap-3 flex-wrap">
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">📱</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">🌐</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">🔗</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">💾</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">🎨</span>
-            </div>
-            <div className="w-12 h-12 bg-[#2b215a] rounded-xl flex items-center justify-center border border-[#4f228d]">
-              <span className="text-[#9857d3] text-lg">🔧</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center mb-40 relative">
-          <div className="relative">
-            {/* Main logo circle */}
-            <div className="w-40 h-40 bg-gradient-to-br from-[#9857d3] to-[#a362ff] rounded-full flex items-center justify-center relative z-10 shadow-2xl">
-              <span className="text-white text-5xl font-bold">Ʃ</span>
-            </div>
-            {/* Glow effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#9857d3] to-[#a362ff] rounded-full blur-2xl opacity-60 scale-125 animate-pulse"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#9857d3] to-[#a362ff] rounded-full blur-3xl opacity-30 scale-150"></div>
-            {/* Orbital elements */}
-            <div className="absolute -inset-20">
-              <div className="w-2 h-2 bg-[#9857d3] rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 opacity-60"></div>
-              <div className="w-1 h-1 bg-[#a362ff] rounded-full absolute bottom-0 right-1/4 opacity-40"></div>
-              <div className="w-1.5 h-1.5 bg-[#9857d3] rounded-full absolute left-0 top-1/3 opacity-50"></div>
-              <div className="w-1 h-1 bg-[#a362ff] rounded-full absolute right-0 bottom-1/3 opacity-60"></div>
-            </div>
-          </div>
+          <TechNetwork />
         </div>
 
         {/* Example Projects */}
-        <div className="space-y-32">
+        <div id="projects" className="space-y-32 scroll-mt-24">
           {/* Project 1 */}
           <div className="grid lg:grid-cols-2 gap-16 items-center relative">
             <div>
               <p className="text-[#9857d3] text-sm font-medium mb-2 uppercase tracking-wider">Featured Project</p>
-              <h3 className="text-4xl font-bold mb-8 text-white">Example Project</h3>
+              <h3 className="text-4xl font-bold mb-8 text-white">GridAPP</h3>
 
               <div className="relative z-20 lg:-mr-24">
                 <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl">
                   <p className="text-[#ccd6f6] leading-relaxed text-base">
-                    A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently
-                    played tracks, and detailed audio information about each track. Create and save new playlists of
-                    recommended tracks based on your existing playlists and more.
+                    A skill-tracking app to set learning goals, track progress, and stay organized with an interactive dashboard. Powered by Gemini AI, it helps users generate quizzes, take notes, and get study support. Built with Next.js and Supabase (Postgres).
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 mt-6">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              <a
+                href="https://grindapp.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-white/80 hover:text-white transition-colors group"
+              >
+                <svg
+                  className="w-6 h-6 text-[#a362ff] transition-all group-hover:drop-shadow-[0_0_10px_rgba(163,98,255,0.9)]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3 2l7.5 16.5 2.2-6.1 6.1-2.2L3 2zm8.6 12.1l-2.7 7.3 2.8-1.8 3.3 4.4 2.4-1.8-3.3-4.4 2.8-1.8-7.3 2.7z" />
                 </svg>
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
+                <span className="text-sm font-medium tracking-wide">Live Demo</span>
+              </a>
             </div>
             <div className="relative">
               <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
@@ -253,26 +201,32 @@ export default function Portfolio() {
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-[#9857d3] text-sm font-medium mb-2 uppercase tracking-wider">Featured Project</p>
-              <h3 className="text-4xl font-bold mb-8 text-white">Example Project</h3>
+              <h3 className="text-4xl font-bold mb-8 text-white">Polytix</h3>
 
               <div className="relative z-20 lg:-ml-24">
                 <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl mb-0 border border-white/15 shadow-2xl">
                   <p className="text-[#ccd6f6] leading-relaxed text-base">
-                    A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently
-                    played tracks, and detailed audio information about each track. Create and save new playlists of
-                    recommended tracks based on your existing playlists and more.
+                   It’s a decentralized voting dApp where I led the frontend and smart contract integration. The platform supports token-gated, open, and registration-based campaigns with proposal and candidate voting, NFT ticketing, role-based dashboards, and live on-chain results via The Graph.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 mt-6">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              <a
+                href="https://polytix.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-white/80 hover:text-white transition-colors group"
+              >
+                <svg
+                  className="w-6 h-6 text-[#a362ff] transition-all group-hover:drop-shadow-[0_0_10px_rgba(163,98,255,0.9)]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3 2l7.5 16.5 2.2-6.1 6.1-2.2L3 2zm8.6 12.1l-2.7 7.3 2.8-1.8 3.3 4.4 2.4-1.8-3.3-4.4 2.8-1.8-7.3 2.7z" />
                 </svg>
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
+                <span className="text-sm font-medium tracking-wide">Live Demo</span>
+              </a>
             </div>
           </div>
 
@@ -280,26 +234,32 @@ export default function Portfolio() {
           <div className="grid lg:grid-cols-2 gap-16 items-center relative">
             <div>
               <p className="text-[#9857d3] text-sm font-medium mb-2 uppercase tracking-wider">Featured Project</p>
-              <h3 className="text-4xl font-bold mb-8 text-white">Example Project</h3>
+              <h3 className="text-4xl font-bold mb-8 text-white">EduPayChain</h3>
 
               <div className="relative z-20 lg:-mr-24">
                 <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl">
                   <p className="text-[#ccd6f6] leading-relaxed text-base">
-                    A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently
-                    played tracks, and detailed audio information about each track. Create and save new playlists of
-                    recommended tracks based on your existing playlists and more.
+                    Decentralized tuition payment via ERC-20 tokens & escrow contracts. Features portals, auto fee disbursement, immutable IPFS receipts. Integrated smart contracts with frontend.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 mt-6">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              <a
+                href="https://edu-pay-chain.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-white/80 hover:text-white transition-colors group"
+              >
+                <svg
+                  className="w-6 h-6 text-[#a362ff] transition-all group-hover:drop-shadow-[0_0_10px_rgba(163,98,255,0.9)]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3 2l7.5 16.5 2.2-6.1 6.1-2.2L3 2zm8.6 12.1l-2.7 7.3 2.8-1.8 3.3 4.4 2.4-1.8-3.3-4.4 2.8-1.8-7.3 2.7z" />
                 </svg>
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
+                <span className="text-sm font-medium tracking-wide">Live Demo</span>
+              </a>
             </div>
             <div className="relative">
               <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
@@ -318,11 +278,25 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-3 mt-32 pb-16">
-          <div className="w-4 h-4 bg-[#9857d3] rounded-full"></div>
-          <div className="w-4 h-4 bg-[#2b215a] rounded-full border border-[#4f228d]"></div>
-          <div className="w-4 h-4 bg-[#2b215a] rounded-full border border-[#4f228d]"></div>
-        </div>
+        {/* Contact Section */}
+        <section id="contact" className="mt-32">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Contact Me</h3>
+          <p className="text-[#b5bddb] mb-8 max-w-3xl">I’m available for internships, freelance work, and collaborations. Reach out via email or connect on socials.</p>
+          <div className="flex items-center gap-6">
+            <a href="https://www.linkedin.com/in/anuska-s/" target="_blank" rel="noreferrer" className="transition-transform hover:-translate-y-1">
+              <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" className="w-10 h-10 drop-shadow-[0_0_10px_rgba(163,98,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(163,98,255,0.9)]" />
+            </a>
+            <a href="https://x.com/ThizisAnuska?t=6POE1GIs8NU1PD4qBAwXCQ&s=09" target="_blank" rel="noreferrer" className="transition-transform hover:-translate-y-1">
+              <img src="https://cdn.simpleicons.org/x/ffffff" alt="Twitter/X" className="w-10 h-10 drop-shadow-[0_0_10px_rgba(163,98,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(163,98,255,0.9)]" />
+            </a>
+            <a href="https://github.com/Anuskawebb" target="_blank" rel="noreferrer" className="transition-transform hover:-translate-y-1">
+              <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" className="w-10 h-10 drop-shadow-[0_0_10px_rgba(163,98,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(163,98,255,0.9)]" />
+            </a>
+            <a href="mailto:anuskaa0003@gmail.com" className="transition-transform hover:-translate-y-1">
+              <img src="https://cdn.simpleicons.org/minutemailer/EA4335" alt="Email" className="w-10 h-10 drop-shadow-[0_0_10px_rgba(163,98,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(163,98,255,0.9)]" />
+            </a>
+          </div>
+        </section>
       </section>
     </div>
   )
