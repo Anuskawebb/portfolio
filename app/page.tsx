@@ -5,6 +5,7 @@ import projectImg2 from "@/app/screenPreviews/image2.jpg"
 import projectImg3 from "@/app/screenPreviews/image3.jpg"
 import heroAvatar from "@/app/screenPreviews/c4be3ecb-cb44-4687-866a-0940ef600153.jpg"
 import TechNetwork from "@/components/TechNetwork"
+import TypingAnimation from "@/components/TypingAnimation"
 
 export default function Portfolio() {
   return (
@@ -66,25 +67,12 @@ export default function Portfolio() {
             <h1 className="text-6xl font-bold mb-4 leading-tight text-white">
               Who Builds
               <br />
-              Ideas Into{" "}
-              <span className="relative">
-                <span className="text-[#a362ff] font-bold">Reality</span>
-                {/* Hand-drawn circle around Reality */}
-                <svg className="absolute -inset-4 w-full h-full" viewBox="0 0 200 80" fill="none">
-                  <ellipse
-                    cx="100"
-                    cy="40"
-                    rx="90"
-                    ry="35"
-                    stroke="#9857d3"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeDasharray="3,2"
-                    opacity="0.8"
-                  />
-                </svg>
-              </span>
-              ...
+              <TypingAnimation 
+                text="Ideas Into Reality..."
+                speed={150}
+                delay={1000}
+                className="text-[#a362ff] font-bold"
+              />
             </h1>
             <p className="text-[#ccd6f6] text-lg font-medium">Because reality looks better when powered by code.</p>
           </div>
@@ -93,10 +81,6 @@ export default function Portfolio() {
         {/* About Section */}
         <div id="about" className="max-w-3xl text-left mb-20 scroll-mt-24">
           <h2 className="text-4xl font-bold mb-8 text-white">I'm a Web2/Web3 Dev .</h2>
-          <p className="text-[#ccd6f6] mb-6 leading-relaxed text-lg">
-            Recently graduated with a BCA (9.01 CGPA), exploring Web2 & Web3 development through projects and
-            hackathons.
-          </p>
           <p className="text-[#ccd6f6] leading-relaxed text-lg">
             A self-taught web developer passionate about designing responsive websites and building full-stack
             applications. Currently expanding into Web3, learning Solidity, and exploring how to craft DApps for the
@@ -105,9 +89,9 @@ export default function Portfolio() {
         </div>
 
         {/* Academic Background */}
-        <div className="max-w-2xl mb-20">
+        <div className="max-w-2xl mb-20 mx-auto text-center">
           <h3 className="text-2xl font-bold mb-8">Academic Background</h3>
-          <Card className="bg-gradient-to-r from-[#2b215a] to-[#2b0b3a] border-[#4f228d] p-8 rounded-2xl">
+          <Card className="bg-gradient-to-r from-[#2b215a] to-[#2b0b3a] border-[#4f228d] p-8 rounded-2xl card-glow cursor-pointer">
             <div className="flex items-center gap-6">
               <div className="w-16 h-20 bg-[#9857d3] rounded-xl flex items-center justify-center relative">
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
@@ -126,9 +110,9 @@ export default function Portfolio() {
         {/* Skills Section */}
         <div id="skills" className="text-center mb-20 scroll-mt-24">
           <p className="text-[#b5bddb] mb-2 text-lg">
-            I'm currently looking to join a <span className="text-[#9857d3]">cross-functional</span> team
+            I'm enhancing my skills in <span className="text-[#9857d3]">modern full-stack</span> and decentralized app development.
           </p>
-          <p className="text-[#b5bddb] text-sm mb-12">That values improving people's lives through accessible design</p>
+          <p className="text-[#b5bddb] text-sm mb-12">I'm passionate about learning and shaping innovative Web3 solutions.</p>
 
           <TechNetwork />
         </div>
@@ -142,11 +126,13 @@ export default function Portfolio() {
               <h3 className="text-4xl font-bold mb-8 text-white">GridAPP</h3>
 
               <div className="relative z-20 lg:-mr-24">
-                <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl">
-                  <p className="text-[#ccd6f6] leading-relaxed text-base">
-                    A skill-tracking app to set learning goals, track progress, and stay organized with an interactive dashboard. Powered by Gemini AI, it helps users generate quizzes, take notes, and get study support. Built with Next.js and Supabase (Postgres).
-                  </p>
-                </div>
+                <a href="https://grindapp.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                  <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl card-glow cursor-pointer">
+                    <p className="text-[#ccd6f6] leading-relaxed text-base">
+                      A skill-tracking app to set learning goals, track progress, and stay organized with an interactive dashboard. Powered by Gemini AI, it helps users generate quizzes, take notes, and get study support. Built with Next.js and Supabase (Postgres).
+                    </p>
+                  </div>
+                </a>
               </div>
 
               <a
@@ -167,48 +153,54 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
-              <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl">
-                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={projectImg1}
-                    alt="Project mockup"
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto"
-                    priority
-                  />
+              <a href="https://grindapp.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
+                <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl card-glow cursor-pointer">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src={projectImg1}
+                      alt="Project mockup"
+                      width={1200}
+                      height={700}
+                      className="w-full h-auto"
+                      priority
+                    />
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
           {/* Project 2 */}
           <div className="grid lg:grid-cols-2 gap-16 items-center relative">
             <div className="order-2 lg:order-1 relative">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
-              <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl">
-                <div className="bg-[#1a0b2e] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={projectImg3}
-                    alt="Voting app mockup"
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto"
-                  />
+              <a href="https://polytix.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
+                <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl card-glow cursor-pointer">
+                  <div className="bg-[#1a0b2e] rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src={projectImg3}
+                      alt="Voting app mockup"
+                      width={1200}
+                      height={700}
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-[#9857d3] text-sm font-medium mb-2 uppercase tracking-wider">Featured Project</p>
               <h3 className="text-4xl font-bold mb-8 text-white">Polytix</h3>
 
               <div className="relative z-20 lg:-ml-24">
-                <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl mb-0 border border-white/15 shadow-2xl">
-                  <p className="text-[#ccd6f6] leading-relaxed text-base">
-                   It’s a decentralized voting dApp where I led the frontend and smart contract integration. The platform supports token-gated, open, and registration-based campaigns with proposal and candidate voting, NFT ticketing, role-based dashboards, and live on-chain results via The Graph.
-                  </p>
-                </div>
+                <a href="https://polytix.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                  <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl mb-0 border border-white/15 shadow-2xl card-glow cursor-pointer">
+                    <p className="text-[#ccd6f6] leading-relaxed text-base">
+                     It's a decentralized voting dApp where I led the frontend and smart contract integration. The platform supports token-gated, open, and registration-based campaigns with proposal and candidate voting, NFT ticketing, role-based dashboards, and live on-chain results via The Graph.
+                    </p>
+                  </div>
+                </a>
               </div>
 
               <a
@@ -237,11 +229,13 @@ export default function Portfolio() {
               <h3 className="text-4xl font-bold mb-8 text-white">EduPayChain</h3>
 
               <div className="relative z-20 lg:-mr-24">
-                <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl">
-                  <p className="text-[#ccd6f6] leading-relaxed text-base">
-                    Decentralized tuition payment via ERC-20 tokens & escrow contracts. Features portals, auto fee disbursement, immutable IPFS receipts. Integrated smart contracts with frontend.
-                  </p>
-                </div>
+                <a href="https://edu-pay-chain.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                  <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/15 shadow-2xl card-glow cursor-pointer">
+                    <p className="text-[#ccd6f6] leading-relaxed text-base">
+                      Decentralized tuition payment via ERC-20 tokens & escrow contracts. Features portals, auto fee disbursement, immutable IPFS receipts. Integrated smart contracts with frontend.
+                    </p>
+                  </div>
+                </a>
               </div>
 
               <a
@@ -262,18 +256,20 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
-              <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl">
-                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={projectImg2}
-                    alt="Skills app mockup"
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto"
-                  />
+              <a href="https://edu-pay-chain.vercel.app/" target="_blank" rel="noreferrer" className="block">
+                <div className="absolute -inset-8 bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] rounded-3xl blur-2xl opacity-70"></div>
+                <div className="relative bg-gradient-to-br from-[#2b0b3a] to-[#1a0b2e] p-6 rounded-3xl card-glow cursor-pointer">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src={projectImg2}
+                      alt="Skills app mockup"
+                      width={1200}
+                      height={700}
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

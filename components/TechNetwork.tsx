@@ -21,7 +21,10 @@ const techs: Tech[] = [
   { name: "Gatsby", url: "https://cdn.simpleicons.org/gatsby/663399" },
   { name: "Illustrator", url: "https://cdn.simpleicons.org/adobeillustrator/FF9A00" },
   { name: "Express", url: "https://cdn.simpleicons.org/express/ffffff" },
-  { name: "MongoDB", url: "https://cdn.simpleicons.org/mongodb/47A248" }
+  { name: "MongoDB", url: "https://cdn.simpleicons.org/mongodb/47A248" },
+  { name: "Solidity", url: "https://cdn.simpleicons.org/solidity/363636" },
+  { name: "Ethereum", url: "https://cdn.simpleicons.org/ethereum/627EEA" },
+  { name: "MetaMask", url: "https://cdn.simpleicons.org/metamask/F6851B" }
 ]
 
 export default function TechNetwork() {
