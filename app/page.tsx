@@ -123,7 +123,7 @@ export default function Portfolio() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative">
             <div>
               <p className="text-[#9857d3] text-xs md:text-sm font-medium mb-2 uppercase tracking-wider">Featured Project</p>
-              <h3 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 text-white">GridAPP</h3>
+              <h3 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 text-white">GrindAPP</h3>
 
               <div className="relative z-20 lg:-mr-24 mb-4 lg:mb-0">
                 <a href="https://grindapp.vercel.app/" target="_blank" rel="noreferrer" className="block">
