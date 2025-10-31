@@ -1,6 +1,7 @@
 "use client";
 
-import { Box, Lock, Settings } from "lucide-react";
+import React from "react";
+import { GraduationCap, Lock, Trophy } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function GlowingEffectDemo() {
@@ -8,15 +9,19 @@ export function GlowingEffectDemo() {
     <ul className="grid grid-cols-1 grid-rows-3 gap-6 md:grid-cols-12 md:grid-rows-2 md:gap-4 lg:gap-4 xl:grid-rows-2 xl:ml-[25%] md:ml-[25%]">
       <GridItem
         area="md:[grid-area:1/1/2/9] xl:[grid-area:1/1/2/9]"
-        icon={<Box className="h-5 w-5 sm:h-6 sm:w-6 md:h-4 md:w-4 text-black dark:text-neutral-400" />}
-        title="BCA Graduate with 9.01 CGPA"
+        icon={<GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 md:h-4 md:w-4 text-black dark:text-neutral-400" />}
+        title={
+          <>
+            BCA Graduate with <span className="text-yellow-500 dark:text-yellow-400">9.01 CGPA</span>
+          </>
+        }
         description="Built strong knowledge in comp fundamentals, DBMS, OS, and programming."
       />
 
       <GridItem
         area="md:[grid-area:2/1/3/9] xl:[grid-area:2/1/3/9]"
-        icon={<Settings className="h-5 w-5 sm:h-6 sm:w-6 md:h-4 md:w-4 text-black dark:text-neutral-400" />}
-        title="1x Hackathon Winner"
+        icon={<Trophy className="h-5 w-5 sm:h-6 sm:w-6 md:h-4 md:w-4 text-black dark:text-neutral-400" />}
+        title={<span className="text-yellow-500 dark:text-yellow-400">1x Hackathon Winner</span>}
         description="Secured 2nd prize at Celo Kolkata Hackathon 2025."
       />
 
@@ -33,7 +38,7 @@ export function GlowingEffectDemo() {
 interface GridItemProps {
   area: string;
   icon: React.ReactNode;
-  title: string;
+  title: string | React.ReactNode;
   description: React.ReactNode;
 }
 

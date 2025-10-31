@@ -40,6 +40,7 @@ export function TimelineDemo() {
           buttonText="View Project"
           buttonLink="https://grindapp.vercel.app/"
           layout="left"
+          techStack={["Next.js", "PostgreSQL", "Gemini AI"]}
         />
       ),
     },
@@ -48,12 +49,19 @@ export function TimelineDemo() {
       content: (
         <ProjectShowcase
           title="Polytix"
-          description="A decentralized voting system built on Polygon ensuring transparent and tamper-proof elections using blockchain."
+          description={
+            <>
+              <span className="text-yellow-500 dark:text-yellow-400">(Top 10 projects in Fair3 hackathon 2025)</span>
+              <br />
+              A decentralized voting system built on Polygon ensuring transparent and tamper-proof elections using blockchain.
+            </>
+          }
           image="/polytix-hero.png"
           imageAlt="PolyTix - Decentralized voting on Polygon"
           buttonText="View Demo"
           buttonLink="https://polytix.vercel.app/"
           layout="right"
+          techStack={["Next.js", "Solidity", "Ethers.js", "The Graph"]}
         />
       ),
     },
@@ -68,6 +76,7 @@ export function TimelineDemo() {
           buttonText="View Project"
           buttonLink="https://edu-pay-chain.vercel.app/"
           layout="left"
+          techStack={["Next.js", "Solidity", "IPFS"]}
         />
       ),
     },
@@ -90,14 +99,16 @@ function ProjectShowcase({
   buttonText,
   buttonLink,
   layout,
+  techStack,
 }: {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   image: string;
   imageAlt: string;
   buttonText: string;
   buttonLink: string;
   layout: "left" | "right";
+  techStack?: string[];
 }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -132,6 +143,19 @@ function ProjectShowcase({
               className="w-full h-auto object-cover rounded-lg"
             />
           </motion.div>
+          {/* Tech Stack Icons */}
+          {techStack && techStack.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
+              {techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Text Content - appears after image on mobile */}

@@ -6,47 +6,68 @@ export function HeroSection04() {
   return (
     <section className="min-h-screen overflow-hidden relative py-20">
       <div className="mx-auto max-w-7xl relative z-20 px-6">
-        <div className="relative ">
+        <div className="relative pt-16 sm:pt-20 md:pt-0">
           <h1
-            className={`z-20 text-blue-700 relative font-bold text-center tracking-[-7px] text-7xl md:text-9xl xl:tracking-[-1rem] md:tracking-[-14px] xl:text-[10rem]`}
+            className={`z-40 text-blue-700 relative font-bold text-center tracking-[-7px] text-7xl md:text-9xl xl:tracking-[-1rem] md:tracking-[-14px] xl:text-[10rem]`}
           >
             WEB DEVELOPER
           </h1>
           {/* Desktop name: stacked lines, second shifted right */}
-          <div className="hidden xl:block absolute -bottom-24 right-8 text-foreground">
+          <div className="hidden xl:block absolute -bottom-24 right-8 text-foreground z-30">
             <p className="text-4xl font-thin tracking-[6px] leading-none">ANUSKA</p>
             <p className="text-4xl font-thin tracking-[6px] leading-none ml-8">SARKAR</p>
           </div>
-          {/* Mobile name: stacked lines, second shifted right */}
-          <div className="xl:hidden absolute -bottom-12 sm:-bottom-16 md:-bottom-20 left-4 sm:left-6 text-foreground">
-            <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none">ANUSKA</p>
-            <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none ml-4 sm:ml-6">SARKAR</p>
-          </div>
+          
         </div>
 
         <div className="grid relative">
-          <div className="space-y-8 pt-20 flex gap-6 justify-center">
-            <div className="flex gap-6 bg-zinc-200 dark:bg-zinc-800 w-full max-w-xl h-fit p-10 items-end space-y-2 text-xl font-bold md:text-2xl lg:text-3xl">
-              <div className="font-semibold text-xl">
-                <div>/ FRONTEND DESIGNS</div>
-                <div>/ FULLSTACK APPS</div>
-                <div>/ WEB3 dAPPS</div>
-              </div>
-              <div className="absolute hidden  md:flex left-1/2 -top-10 w-fit overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-                <img
-                  src="/my-pic2.jpg"
-                  alt="Designer portrait"
-                  className="h-100 w-full object-contain grayscale"
-                />
+          {/* Desktop layout */}
+          <div className="hidden md:block space-y-8 pt-20">
+            <div className="flex gap-6 justify-center">
+              <div className="flex gap-6 bg-zinc-200 dark:bg-zinc-800 w-full max-w-xl h-fit p-10 items-end space-y-2 text-xl font-bold md:text-2xl lg:text-3xl">
+                <div className="font-semibold text-xl">
+                  <div>/ FRONTEND DESIGNS</div>
+                  <div>/ FULLSTACK APPS</div>
+                  <div>/ WEB3 <span className="text-yellow-500 dark:text-yellow-400">dAPPS</span></div>
+                </div>
+                <div className="absolute hidden md:flex left-1/2 -top-10 w-fit overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+                  <img
+                    src="/my-pic2.jpg"
+                    alt="Designer portrait"
+                    className="h-100 w-full object-contain grayscale"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-            <img
-              src="/my-pic2.jpg"
-              alt="Designer portrait"
-              className="h-100 w-full object-contain grayscale"
-            />
+          
+          {/* Mobile layout - matching first image */}
+          <div className="md:hidden pt-8">
+            <div className="relative flex gap-4 items-start">
+              {/* Left side: Name + Skills */}
+              <div className="flex-1 space-y-4 z-30 min-w-0">
+                <div className="text-left">
+                  <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none text-foreground">ANUSKA</p>
+                  <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none ml-4 sm:ml-6 text-foreground">SARKAR</p>
+                </div>
+                <div className="bg-zinc-200 dark:bg-zinc-800 p-4 sm:p-6 space-y-2 text-base sm:text-lg font-bold relative z-30">
+                  <div className="font-semibold">/ FRONTEND DESIGNS</div>
+                  <div className="font-semibold">/ FULLSTACK APPS</div>
+                  <div className="font-semibold">/ WEB3 <span className="text-yellow-500 dark:text-yellow-400">dAPPS</span></div>
+                  
+                  {/* Portrait overlapping the grey skills component */}
+                  <div className="absolute -right-2 sm:-right-4 -top-28 sm:-top-36 w-44 sm:w-56 h-auto z-40">
+                    <div className="overflow-hidden border-2 border-white dark:border-neutral-700">
+                      <img
+                        src="/my-pic2.jpg"
+                        alt="Designer portrait"
+                        className="w-full h-full object-cover grayscale"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
