@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { ArrowDownRight } from "@aliimam/icons";
-// Button removed per request
 import FloatingDockDemo from "@/components/floating-dock-demo";
 
 export function HeroSection04() {
@@ -9,19 +7,18 @@ export function HeroSection04() {
     <section className="min-h-screen overflow-hidden relative py-20">
       <div className="mx-auto max-w-7xl relative z-20 px-6">
         <div className="relative ">
-          <p className="text-sm absolute -top-4 left-20 font-medium tracking-wider">1,996</p>
           <h1
             className={`z-20 text-blue-700 relative font-bold text-center tracking-[-7px] text-7xl md:text-9xl xl:tracking-[-1rem] md:tracking-[-14px] xl:text-[10rem]`}
           >
             WEB DEVELOPER
           </h1>
           {/* Desktop name: stacked lines, second shifted right */}
-          <div className="hidden xl:block absolute -bottom-12 right-24 text-foreground">
+          <div className="hidden xl:block absolute -bottom-24 right-8 text-foreground">
             <p className="text-4xl font-thin tracking-[6px] leading-none">ANUSKA</p>
             <p className="text-4xl font-thin tracking-[6px] leading-none ml-8">SARKAR</p>
           </div>
           {/* Mobile name: stacked lines, second shifted right */}
-          <div className="xl:hidden absolute -bottom-12 left-24 text-foreground">
+          <div className="xl:hidden absolute -bottom-24 right-8 text-foreground">
             <p className="text-4xl font-thin tracking-[6px] leading-none">ANUSKA</p>
             <p className="text-4xl font-thin tracking-[6px] leading-none ml-6">SARKAR</p>
           </div>
@@ -37,25 +34,19 @@ export function HeroSection04() {
               </div>
               <div className="absolute hidden  md:flex left-1/2 -top-10 w-fit overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                 <img
-                  src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1400&auto=format&fit=crop"
+                  src="/my-pic2.jpg"
                   alt="Designer portrait"
                   className="h-100 w-full object-contain grayscale"
                 />
-                <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
-                  BASED IN BOKARO STEEL CITY
-                </div>
               </div>
             </div>
           </div>
           <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-zinc-200 dark:bg-zinc-800">
             <img
-              src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1400&auto=format&fit=crop"
+              src="/my-pic2.jpg"
               alt="Designer portrait"
               className="h-100 w-full object-contain grayscale"
             />
-            <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
-              BASED IN BOKARO STEEL CITY
-            </div>
           </div>
         </div>
 

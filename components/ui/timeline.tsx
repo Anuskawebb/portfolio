@@ -40,19 +40,21 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl font-bold tracking-[-2px] md:tracking-[-4px]">
-          Changelog from my journey
+          My Journey so far
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm font-mono font-medium tracking-wide">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+          A look back at my academic milestones, hackathon wins, and the projects that shaped my developer journey.
         </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
+        {data.map((item, index) => {
+          const sectionId = item.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+          return (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            id={sectionId}
+            className="flex justify-start pt-10 md:pt-40 md:gap-10 scroll-mt-40"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
@@ -69,7 +71,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               {item.content}{" "}
             </div>
           </div>
-        ))}
+        );
+        })}
 
         <div
           style={{
