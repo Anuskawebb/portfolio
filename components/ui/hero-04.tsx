@@ -18,9 +18,9 @@ export function HeroSection04() {
             <p className="text-4xl font-thin tracking-[6px] leading-none ml-8">SARKAR</p>
           </div>
           {/* Mobile name: stacked lines, second shifted right */}
-          <div className="xl:hidden absolute -bottom-24 right-8 text-foreground">
-            <p className="text-4xl font-thin tracking-[6px] leading-none">ANUSKA</p>
-            <p className="text-4xl font-thin tracking-[6px] leading-none ml-6">SARKAR</p>
+          <div className="xl:hidden absolute -bottom-12 sm:-bottom-16 md:-bottom-20 left-4 sm:left-6 text-foreground">
+            <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none">ANUSKA</p>
+            <p className="text-2xl sm:text-3xl font-thin tracking-[4px] sm:tracking-[6px] leading-none ml-4 sm:ml-6">SARKAR</p>
           </div>
         </div>
 
