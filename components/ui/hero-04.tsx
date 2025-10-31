@@ -68,7 +68,7 @@ export function HeroSection04() {
             ENGAGING FRONTENDS TO SCALABLE FULLSTACK AND SECURE WEB3 APPLICATIONS
           </p>
         </div>
-        <div className="mt-2">
+        <div className="mt-10">
           <FloatingDockDemo />
         </div>
       </div>
