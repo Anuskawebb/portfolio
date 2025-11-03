@@ -20,7 +20,6 @@ export function TimelineDemo() {
           liveDemoLink="#"
           githubLink="#"
           year="2025"
-          role="Full Stack Developer"
           achievement="2nd place - Celo Hackathon Kolkata 2025"
           techStack={["Next.js", "Supabase", "Envio"]}
         />
@@ -37,7 +36,6 @@ export function TimelineDemo() {
           liveDemoLink="https://grindapp.vercel.app/"
           githubLink="https://github.com/anuskawebb"
           year="2025"
-          role="Full Stack Developer"
           techStack={["Next.js", "PostgreSQL", "Gemini AI"]}
         />
       ),
@@ -57,7 +55,6 @@ export function TimelineDemo() {
           liveDemoLink="https://polytix.vercel.app/"
           githubLink="https://github.com/anuskawebb"
           year="2025"
-          role="Full Stack Developer"
           label="Challenge"
           techStack={["Next.js", "Solidity", "Ethers.js", "The Graph"]}
         />
@@ -74,7 +71,6 @@ export function TimelineDemo() {
           liveDemoLink="https://edu-pay-chain.vercel.app/"
           githubLink="https://github.com/anuskawebb"
           year="2025"
-          role="Full Stack Developer"
           techStack={["Next.js", "Solidity", "IPFS"]}
         />
       ),
@@ -122,10 +118,34 @@ function ProjectShowcase({
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
+  // Map tech stack names to icon URLs
+  const getTechIcon = (techName: string): string => {
+    const techMap: Record<string, string> = {
+      "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "React.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "PostgreSQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg",
+      "Gemini AI": "https://cdn.simpleicons.org/google",
+      "Solidity": "https://cdn.simpleicons.org/solidity/ffffff",
+      "Ethers.js": "https://cdn.simpleicons.org/ethereum/ffffff",
+      "The Graph": "https://cdn.simpleicons.org/thegraph/6E4EE6",
+      "IPFS": "https://cdn.simpleicons.org/ipfs",
+      "Supabase": "https://cdn.simpleicons.org/supabase",
+      "Envio": "https://cdn.simpleicons.org/graphql",
+    };
+    return techMap[techName] || "";
+  };
+
   const projectInfo = [];
   if (client) projectInfo.push({ label: "Client", value: client });
   if (year) projectInfo.push({ label: "Year", value: year });
-  if (role) projectInfo.push({ label: "Role", value: role });
+  if (techStack && techStack.length > 0) {
+    projectInfo.push({ 
+      label: "Tech Stack", 
+      value: techStack,
+      isTechStack: true 
+    });
+  }
 
   return (
     <motion.div
@@ -206,9 +226,33 @@ function ProjectShowcase({
                           <span className="text-neutral-400 dark:text-neutral-400 text-sm md:text-base">
                             {info.label}
                           </span>
-                          <span className="text-white text-sm md:text-base font-medium">
-                            {info.value}
-                          </span>
+                          {info.isTechStack ? (
+                            <div className="flex items-center gap-2 flex-wrap justify-end">
+                              {(info.value as string[]).map((tech, techIndex) => {
+                                const iconUrl = getTechIcon(tech);
+                                return iconUrl ? (
+                                  <img
+                                    key={techIndex}
+                                    src={iconUrl}
+                                    alt={tech}
+                                    className="w-6 h-6 md:w-7 md:h-7 object-contain"
+                                    title={tech}
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = 'none';
+                                    }}
+                                  />
+                                ) : (
+                                  <span key={techIndex} className="text-white text-xs px-2 py-1 bg-neutral-700 rounded">
+                                    {tech}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <span className="text-white text-sm md:text-base font-medium">
+                              {info.value as string}
+                            </span>
+                          )}
                         </div>
                         {index < projectInfo.length - 1 && (
                           <div className="border-t border-neutral-700 dark:border-neutral-700"></div>

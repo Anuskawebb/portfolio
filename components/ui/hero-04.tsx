@@ -4,7 +4,7 @@ import FloatingDockDemo from "@/components/floating-dock-demo";
 
 export function HeroSection04() {
   return (
-    <section className="min-h-screen overflow-hidden relative py-20">
+    <section className="overflow-hidden relative pt-20 pb-0">
       <div className="mx-auto max-w-7xl relative z-20 px-6">
         <div className="relative pt-16 sm:pt-20 md:pt-0">
           <h1
@@ -80,7 +80,7 @@ export function HeroSection04() {
             ENGAGING FRONTENDS TO SCALABLE FULLSTACK AND SECURE WEB3 APPLICATIONS
           </p>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 mb-0 pb-0">
           <FloatingDockDemo />
         </div>
       </div>

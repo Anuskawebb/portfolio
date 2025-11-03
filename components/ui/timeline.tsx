@@ -16,8 +16,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl font-bold tracking-[-2px] md:tracking-[-4px]">
           My Journey so far
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm font-mono font-medium tracking-wide">
-          A look back at my academic milestones, hackathon wins, and the projects that shaped my developer journey.
+        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base w-full font-mono font-medium tracking-wide">
+          I started by crafting simple front-end projects, then moved on to building full-stack applications. My curiosity led me to Web3, where I explored decentralized technologies, learned Solidity, and began crafting DApps. Here are some key projects reflecting that journey.
         </p>
       </div>
 
