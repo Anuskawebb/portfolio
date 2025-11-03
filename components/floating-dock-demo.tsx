@@ -7,6 +7,7 @@ import {
   IconBrandLinkedin,
   IconFileText,
   IconTerminal2,
+  IconMail,
 } from "@tabler/icons-react";
 
 export default function FloatingDockDemo() {
@@ -16,7 +17,14 @@ export default function FloatingDockDemo() {
       icon: (
         <IconFileText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://docs.google.com/document/d/1NVoJzvoqAb1CIJxCzxNnjMeqyDvJmiPfCkzhgTXyFmg/edit?tab=t.0",
+      href: "https://drive.google.com/file/d/1mt7RWM9-6mytsZ9-h11Ko1jWVOWPFBgH/view?usp=sharing",
+    },
+    {
+      title: "Email",
+      icon: (
+        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://mail.google.com/mail/?view=cm&to=anuskaa0003@gmail.com",
     },
     {
       title: "Products",
